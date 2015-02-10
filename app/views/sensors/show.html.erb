@@ -1,0 +1,47 @@
+<%= link_to("<< Back to List", {:action => 'index', :controller => 'access'}, :class => 'back-link') %>
+<h1>Sensors#show</h1>
+<!--<p>Find me in app/views/sensors/index.html.erb</p>-->
+
+
+<script type="text/javascript" charset="utg-8">
+	$(function() {
+		new Highcharts.Chart({
+			chart: {
+				renderTo: "sensors_chart"
+			},
+
+			title: {
+				text: "Temperature"
+			},
+
+			xAxis: {
+				type: "datetime"
+			},
+
+			yAxis: {
+				title: {
+					text: "value"
+				}
+			},
+			
+			series: [{
+				pointInterval: <%= 1.day * 1000 %>,
+				pointStart: <%= 1.day.ago.to_i * 10 %>,
+				//data: <%= (1.day.ago.to_date..1.minute.ago).map { |date| Sensor.values(date).to_f }.inspect %>
+
+				data: [
+				<% @sensors.each do |sensor| %>
+				<%= sensor.floatValue %>,
+				<% end %>
+				]		
+			}]
+		});
+	});
+</script>
+
+<div id="sensors_chart" style="width:560; height:300px;"></div>
+
+
+<% @sensors.each do |sensor| %>
+<%= sensor.floatValue %>,
+<% end %>

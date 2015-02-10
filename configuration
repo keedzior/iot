@@ -1,0 +1,2 @@
+      invoke  active_record
+      remove    db/migrate/20150118132021_add_new_column_to.rb

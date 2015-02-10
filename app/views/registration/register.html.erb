@@ -1,0 +1,19 @@
+<% @page_title = "Registration" %>
+
+
+<div class="pages new">
+  <h2>Create Page</h2>
+
+  <%= form_for(:admin_user, :url => {:action => 'attempt_register'}) do |f| %>
+
+      <%= render(:partial => "form", :locals => {:f => f}) %>
+
+    <div class="form-buttons">
+      <%= submit_tag("Create account") %>
+    </div>
+
+  <% end %>
+</div>
+
+
+

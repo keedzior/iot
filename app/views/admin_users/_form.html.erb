@@ -1,0 +1,27 @@
+<%= error_messages_for(@admin_user) %>
+ <table summary="Subject form fields">
+      <tr>
+        <th><%= f.label(:first_name, "First Name") %></th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:last_name, "Last Name") %></th>
+        <td><%= f.text_field(:last_name) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:email, "Email") %></th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:username, "Username") %></th>
+        <td><%= f.text_field(:username) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:password, "password") %></th>
+        <td><%= f.text_field(:password) %></td>
+      </tr>
+      <tr>
+          <th><%= f.label(:created_at) %></th>
+          <td><%= f.datetime_select(:created_at) %></td>
+      </tr>
+    </table>
